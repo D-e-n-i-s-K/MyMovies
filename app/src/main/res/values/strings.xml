@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyMovies</string>
+    <string name="nothing_found">пусто</string>
+    <string name="something_went_wrong">не так</string>
+</resources>
