@@ -19,7 +19,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-
+// под чистую архитектуру
 class MoviesActivity : Activity() {
 
     private val imdbBaseUrl = "https://tv-api.com"
