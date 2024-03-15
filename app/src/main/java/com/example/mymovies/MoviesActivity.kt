@@ -18,7 +18,8 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
+// собранное рабочее приложение до начала изменений архитектуры
+// для последующего анализа изменений
 
 class MoviesActivity : Activity() {
 
