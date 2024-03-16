@@ -1,5 +1,6 @@
 package com.example.mymovies
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -17,10 +18,6 @@ import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
-// собранное рабочее приложение до начала изменений архитектуры
-// для последующего анализа изменений
-// в копии добавлено изменение
 
 class MoviesActivity : Activity() {
 
@@ -102,6 +99,7 @@ class MoviesActivity : Activity() {
 
             imdbService.searchMovies(queryInput.text.toString()).enqueue(object :
                 Callback<MoviesSearchResponse> {
+                @SuppressLint("NotifyDataSetChanged")
                 override fun onResponse(call: Call<MoviesSearchResponse>,
                                         response: Response<MoviesSearchResponse>
                 ) {
@@ -131,6 +129,7 @@ class MoviesActivity : Activity() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun showMessage(text: String, additionalMessage: String) {
         if (text.isNotEmpty()) {
             placeholderMessage.visibility = View.VISIBLE
