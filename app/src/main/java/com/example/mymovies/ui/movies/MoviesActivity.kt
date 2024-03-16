@@ -1,4 +1,4 @@
-package com.example.mymovies
+package com.example.mymovies.ui.movies
 
 //import android.telecom.Call
 import android.annotation.SuppressLint
@@ -13,24 +13,17 @@ import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mymovies.ui.poster.PosterActivity
+import com.example.mymovies.R
+import com.example.mymovies.data.dto.MoviesSearchResponse
+import com.example.mymovies.data.network.IMDbApiService
+import com.example.mymovies.domain.models.Movie
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
-// под чистую архитектуру
-// 13-02 Ветака Чистая архитектура
-// 13-06 Ветака Чистая архитектура Р1
-// 13-10 Ветака Чистая архитектура MyMoviesCopy
-
-// 13-25 Измения в ветке CleanArchitecture на MyMoviesNew
-
-// 13-34 Измения в ветке CleanArchitecture на MyMoviesNewDev2
-// 13-36 Измения в ветке CleanArchitecture на MyMoviesNew
-// 13-39 Измения в ветке CleanArchitecture на MyMoviesNewDev2
-// 13-41 Измения в ветке CleanArchitecture на MyMoviesNew
 class MoviesActivity : Activity() {
 
     private val imdbBaseUrl = "https://tv-api.com"
