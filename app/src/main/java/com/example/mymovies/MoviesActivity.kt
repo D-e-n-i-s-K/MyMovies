@@ -20,6 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 // под чистую архитектуру
+// 13-02 Ветака Чистая архитектура
 class MoviesActivity : Activity() {
 
     private val imdbBaseUrl = "https://tv-api.com"
