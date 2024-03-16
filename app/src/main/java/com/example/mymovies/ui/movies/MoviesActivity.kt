@@ -101,12 +101,12 @@ class MoviesActivity : Activity() {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun consume(foundMovies: List<Movie>) {
                     handler.post {
-                        progressBar.visibility - View.GONE
+                        progressBar.visibility = View.GONE
                         movies.clear()
                         movies.addAll(foundMovies)
                         moviesList.visibility = View.VISIBLE
                         adapter.notifyDataSetChanged()
-                        if(movies.isNotEmpty()){
+                        if(movies.isEmpty()){
                             showMessage(getString(R.string.nothing_found), "")
                         } else {
                             hideMessage()
