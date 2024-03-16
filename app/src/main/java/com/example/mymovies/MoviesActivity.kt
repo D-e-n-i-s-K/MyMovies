@@ -1,24 +1,28 @@
 package com.example.mymovies
 
+//import android.telecom.Call
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-//import android.telecom.Call
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.widget.*
+import android.widget.EditText
+import android.widget.ProgressBar
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import retrofit2.Callback
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
+// 13-49 Измения в ветке main на MyMoviesNew
 
 class MoviesActivity : Activity() {
 
@@ -100,6 +104,7 @@ class MoviesActivity : Activity() {
 
             imdbService.searchMovies(queryInput.text.toString()).enqueue(object :
                 Callback<MoviesSearchResponse> {
+                @SuppressLint("NotifyDataSetChanged")
                 override fun onResponse(call: Call<MoviesSearchResponse>,
                                         response: Response<MoviesSearchResponse>
                 ) {
@@ -129,6 +134,7 @@ class MoviesActivity : Activity() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun showMessage(text: String, additionalMessage: String) {
         if (text.isNotEmpty()) {
             placeholderMessage.visibility = View.VISIBLE
