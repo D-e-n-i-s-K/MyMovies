@@ -1,5 +1,6 @@
 package com.example.mymovies
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -27,6 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 // 13-25 Измения в ветке CleanArchitecture на MyMoviesNew
 
 // 13-34 Измения в ветке CleanArchitecture на MyMoviesNewDev2
+// 13-36 Измения в ветке CleanArchitecture на MyMoviesNew
 class MoviesActivity : Activity() {
 
     private val imdbBaseUrl = "https://tv-api.com"
@@ -107,6 +109,7 @@ class MoviesActivity : Activity() {
 
             imdbService.searchMovies(queryInput.text.toString()).enqueue(object :
                 Callback<MoviesSearchResponse> {
+                @SuppressLint("NotifyDataSetChanged")
                 override fun onResponse(call: Call<MoviesSearchResponse>,
                                         response: Response<MoviesSearchResponse>
                 ) {
@@ -136,6 +139,7 @@ class MoviesActivity : Activity() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun showMessage(text: String, additionalMessage: String) {
         if (text.isNotEmpty()) {
             placeholderMessage.visibility = View.VISIBLE
