@@ -20,6 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 // собранное рабочее приложение до начала изменений архитектуры
 // для последующего анализа изменений
+// в копии добавлено изменение
 
 class MoviesActivity : Activity() {
 
